@@ -37,7 +37,7 @@ client.getInfo(function(err, data) {
 
 Make some changes and commit all
 
-```
+```js
 client.addLocal(function(err, data) {
     console.log('all local changes has been added for commit');
 
