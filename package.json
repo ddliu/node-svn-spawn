@@ -1,10 +1,10 @@
 {
   "name": "svn-spawn",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "SVN access based on svn cli command",
   "main": "lib/svn.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodeunit test"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,9 @@
   ],
   "author": "dong",
   "license": "MIT",
-  "devDependencies": {
-    "xml2js": "~0.2.7",
-    "async": "~0.2.8"
+  "dependencies": {
+    "easy-spawn": "0.0.2",
+    "async": "~0.2.9",
+    "xml2js": "~0.2.7"
   }
 }
