@@ -1,10 +1,21 @@
 var Client = require('../');
 
 var client = new Client({
-    cwd: __dirname + '/trunk'
+    cwd: __dirname + '/src/trunk'
 });
 
 module.exports = {
+    'test checkout': function(test) {
+        var checkoutPath = __dirname + '/src/checkout';
+        var client = new Client({
+            cwd: checkoutPath
+        });
+
+        client.checkout('file:///home/dong/projects/test/test-svn-trunk', function(err, data) {
+            test.equals(err, null);
+            test.done();
+        });
+    },
     'test info': function(test) {
         client.getInfo(function(err, data) {
             test.equals(err, null);
