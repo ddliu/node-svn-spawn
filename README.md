@@ -60,4 +60,8 @@ npm install svn-spawn
 ## TODO
 
 - Detailed document for query result such as `svn info`, `svn log`, `svn status` etc.
-- Unit test for all svn commands
+
+## Changelog
+
+- 0.1.0 - Inital version
+- 0.1.1 - Fix `addLocal` bug; add some tests

@@ -1,7 +1,10 @@
 var Client = require('../');
+var fs = require('fs');
+
+var workingPath = __dirname + '/src/trunk';
 
 var client = new Client({
-    cwd: __dirname + '/src/trunk'
+    cwd: workingPath
 });
 
 module.exports = {
@@ -33,7 +36,7 @@ module.exports = {
     'test status': function(test) {
         client.getStatus(function(err, data) {
             test.equals(err, null);
-            test.equals(data.length, 0);
+            // test.equals(data.length, 0);
             test.done();
         });
     },
@@ -45,9 +48,12 @@ module.exports = {
         });
     },
     'test add': function(test) {
-        //TODO
-        
-        test.done();
+        fs.writeFileSync(workingPath + '/a.txt', new Date().toString());
+
+        client.addLocal(function(err, data) {
+            test.equals(err, null);
+            test.done();
+        });
     },
     'test delete': function(test) {
         // TODO
@@ -55,13 +61,20 @@ module.exports = {
         test.done();
     },
     'test commit': function(test) {
-        // TODO
-        
-        test.done();
+        fs.writeFileSync(workingPath + '/a.txt', new Date().toString());
+
+        client.addLocal(function(err, data) {
+            test.equals(err, null);
+            client.commit('test commit', function(err, data) {
+                test.equals(err, null);
+                test.done();
+            });
+        });
     },
     'test update': function(test) {
-        // TODO
-        
-        test.done();
+        client.update(function(err, data) {
+            test.equals(err, null);
+            test.done();
+        });
     }
 };
