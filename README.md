@@ -57,6 +57,7 @@ client.add('relative/path/to/file', function(err, data) {
         console.log('committed one file!');
     });
 });
+```
 
 Run any svn command
 
