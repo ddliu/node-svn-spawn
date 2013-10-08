@@ -1,7 +1,8 @@
 var Client = require('../');
 var fs = require('fs');
 
-var workingPath = __dirname + '/src/trunk';
+var workingPath = __dirname + '/tmp/copy';
+var repo = 'file://' + __dirname + '/tmp/repo';
 
 var client = new Client({
     cwd: workingPath
@@ -9,12 +10,12 @@ var client = new Client({
 
 module.exports = {
     'test checkout': function(test) {
-        var checkoutPath = __dirname + '/src/checkout';
-        var client = new Client({
-            cwd: checkoutPath
-        });
+        // var checkoutPath = __dirname + '/tmp/checkout';
+        // var client = new Client({
+        //     cwd: checkoutPath
+        // });
 
-        client.checkout('file:///home/dong/projects/test/test-svn-trunk', function(err, data) {
+        client.checkout(repo, function(err, data) {
             test.equals(err, null);
             test.done();
         });
@@ -56,9 +57,10 @@ module.exports = {
         });
     },
     'test delete': function(test) {
-        // TODO
-        
-        test.done();
+        client.del('b.txt', function(err, data) {
+            test.equals(err, null);
+            test.done();
+        });
     },
     'test commit': function(test) {
         fs.writeFileSync(workingPath + '/a.txt', new Date().toString());

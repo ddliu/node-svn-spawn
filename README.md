@@ -1,5 +1,7 @@
 # svn-spawn
 
+[![Build Status](https://travis-ci.org/ddliu/node-svn-spawn.png)](https://travis-ci.org/ddliu/node-svn-spawn)
+
 Easy way to access svn repository with node.js.
 
 ## Features
@@ -47,6 +49,23 @@ client.addLocal(function(err, data) {
 });
 ```
 
+Single file
+
+```js
+client.add('relative/path/to/file', function(err, data) {
+    client.commit(['commit message here', 'relative/path/to/file'], function(err, data) {
+        console.log('committed one file!');
+    });
+});
+
+Run any svn command
+
+```js
+client.cmd(['subcommand', '--option1=xx', '--option2=xx', 'arg1', 'arg2'], function(err, data) {
+    console.log('subcommand done');
+});
+```
+
 ## Requirements
 
 You need to have the `svn` command installed.
@@ -63,5 +82,14 @@ npm install svn-spawn
 
 ## Changelog
 
-- 0.1.0 - Inital version
-- 0.1.1 - Fix `addLocal` bug; add some tests
+### v0.1.0 (2013-05-23)
+
+Inital version
+
+### v0.1.1 (2013-06-07)
+
+Fix `addLocal` bug; add some tests
+
+### v0.1.2 (2013-10-08)
+
+Fix `checkout` bug(if target folder does not exist); fix `getLog` bug;travis-ci

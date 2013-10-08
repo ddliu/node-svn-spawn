@@ -1,10 +1,10 @@
 {
   "name": "svn-spawn",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "SVN access based on svn cli command",
   "main": "lib/svn.js",
   "scripts": {
-    "test": "nodeunit test"
+    "test": "./test/init.sh && nodeunit test"
   },
   "repository": {
     "type": "git",
