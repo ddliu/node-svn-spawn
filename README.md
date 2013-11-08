@@ -73,68 +73,74 @@ client.cmd(['subcommand', '--option1=xx', '--option2=xx', 'arg1', 'arg2'], funct
 
 `getInfo` result example:
 
+```json
+{
+  "$": {
+    "path": ".",
+    "revision": "1",
+    "kind": "dir"
+  },
+  "url": "file:///home/dong/projects/node-packages/node-svn-spawn/test/tmp/repo",
+  "repository": {
+    "root": "file:///home/dong/projects/node-packages/node-svn-spawn/test/tmp/repo",
+    "uuid": "302eb8ee-a81a-4432-8477-1ad8fe3a9a1e"
+  },
+  "wc-info": {
+    "wcroot-abspath": "/home/dong/projects/node-packages/node-svn-spawn/test/tmp/copy",
+    "schedule": "normal",
+    "depth": "infinity"
+  },
+  "commit": {
+    "$": {
+      "revision": "1"
+    },
+    "author": "dong",
+    "date": "2013-11-08T02:07:25.884985Z"
+  }
+}
+```
+
+`getLog` result example:
+
+```json
+[
     {
       "$": {
-        "path": ".",
-        "revision": "1",
-        "kind": "dir"
+        "revision": "1"
       },
-      "url": "file:///home/dong/projects/node-packages/node-svn-spawn/test/tmp/repo",
-      "repository": {
-        "root": "file:///home/dong/projects/node-packages/node-svn-spawn/test/tmp/repo",
-        "uuid": "302eb8ee-a81a-4432-8477-1ad8fe3a9a1e"
-      },
-      "wc-info": {
-        "wcroot-abspath": "/home/dong/projects/node-packages/node-svn-spawn/test/tmp/copy",
-        "schedule": "normal",
-        "depth": "infinity"
+      "author": "dong",
+      "date": "2013-11-08T02:10:37.656902Z",
+      "msg": "init repo"
+    },
+    ...
+]
+```
+
+`getStatus` result example:
+
+```json
+[
+  {
+    "$": {
+      "path": "a.txt"
+    },
+    "wc-status": {
+      "$": {
+        "props": "none",
+        "item": "modified",
+        "revision": "1"
       },
       "commit": {
         "$": {
           "revision": "1"
         },
         "author": "dong",
-        "date": "2013-11-08T02:07:25.884985Z"
+        "date": "2013-11-08T02:17:20.390152Z"
       }
     }
-
-`getLog` result example:
-
-    [
-        {
-          "$": {
-            "revision": "1"
-          },
-          "author": "dong",
-          "date": "2013-11-08T02:10:37.656902Z",
-          "msg": "init repo"
-        },
-        ...
-    ]
-
-`getStatus` result example:
-
-    [
-      {
-        "$": {
-          "path": "a.txt"
-        },
-        "wc-status": {
-          "$": {
-            "props": "none",
-            "item": "modified",
-            "revision": "1"
-          },
-          "commit": {
-            "$": {
-              "revision": "1"
-            },
-            "author": "dong",
-            "date": "2013-11-08T02:17:20.390152Z"
-          }
-        }
-      }
-    ]
+  }
+]
+```
 
 ## Requirements
 
