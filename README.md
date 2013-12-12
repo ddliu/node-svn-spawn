@@ -18,7 +18,9 @@ Create a svn client instance
 ```js
 var Client = require('svn-spawn');
 var client = new Client({
-    cwd: '/path to your svn working directory'
+    cwd: '/path to your svn working directory',
+    username: 'username', // optional if authentication not required or is already saved
+    password: 'password', // optional if authentication not required or is already saved
 });
 ```
 `svn update`
@@ -169,3 +171,7 @@ Fix `checkout` bug(if target folder does not exist); fix `getLog` bug;travis-ci
 ### v0.1.3 (2013-11-08)
 
 Detailed document for query result such as `svn info`, `svn log`, `svn status` etc.
+
+### v0.1.4 (2013-12-12)
+
+Add authontication support
