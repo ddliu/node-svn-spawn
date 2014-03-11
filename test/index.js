@@ -62,6 +62,14 @@ module.exports = {
             test.done();
         });
     },
+    'test export': function(test) {
+        var params = [repo, 'exportdir' ,'--force'];
+        client.export(params, function(err, data) {
+            test.equals(err, null);
+            test.done();
+        });
+    },
+
     'test commit': function(test) {
         fs.writeFileSync(workingPath + '/a.txt', new Date().toString());
 
