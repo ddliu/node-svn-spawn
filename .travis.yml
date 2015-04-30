@@ -4,5 +4,3 @@ node_js:
 before_install:
   - "sudo apt-get update -qq"
   - "sudo apt-get install -qq subversion"
-before_script:
-  - "npm install -g nodeunit"

@@ -4,7 +4,7 @@
   "description": "SVN access based on svn cli command",
   "main": "lib/svn.js",
   "scripts": {
-    "test": "./test/init.sh && nodeunit test"
+    "test": "./test/init.sh && ./node_modules/.bin/nodeunit test"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
     "easy-spawn": "0.0.2",
     "async": "~0.2.9",
     "xml2js": "~0.2.7"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
   }
 }
