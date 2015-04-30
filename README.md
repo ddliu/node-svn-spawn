@@ -1,6 +1,9 @@
 # svn-spawn
 
-[![Build Status](https://travis-ci.org/ddliu/node-svn-spawn.png)](https://travis-ci.org/ddliu/node-svn-spawn)
+[![npm](https://img.shields.io/npm/v/svn-spawn.svg?style=flat-square)](https://www.npmjs.com/package/svn-spawn)
+[![npm](https://img.shields.io/npm/dm/svn-spawn.svg?style=flat-square)](https://www.npmjs.com/package/svn-spawn)
+[![Travis](https://img.shields.io/travis/ddliu/node-svn-spawn.svg?style=flat-square)](https://travis-ci.org/ddliu/node-svn-spawn)
+![npm](https://img.shields.io/npm/l/svn-spawn.svg?style=flat-square)
 
 Easy way to access svn repository with node.js.
 
@@ -153,25 +156,3 @@ You need to have the `svn` command installed.
 ```bash
 npm install svn-spawn
 ```
-
-## Changelog
-
-### v0.1.0 (2013-05-23)
-
-Inital version
-
-### v0.1.1 (2013-06-07)
-
-Fix `addLocal` bug; add some tests
-
-### v0.1.2 (2013-10-08)
-
-Fix `checkout` bug(if target folder does not exist); fix `getLog` bug;travis-ci
-
-### v0.1.3 (2013-11-08)
-
-Detailed document for query result such as `svn info`, `svn log`, `svn status` etc.
-
-### v0.1.4 (2013-12-12)
-
-Add authontication support
