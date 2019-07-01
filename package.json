@@ -1,6 +1,6 @@
 {
   "name": "svn-spawn",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "SVN access based on svn cli command",
   "main": "lib/svn.js",
   "scripts": {
